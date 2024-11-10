@@ -1,0 +1,119 @@
+/* Universal Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Background Image with Subtle Gradient and Light Blur */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), /* Soft gradient */
+        url('n_blue.png'); /* Replace with your background image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8; /* Slightly reduce opacity */
+    filter: blur(2px); /* Light blur effect */
+    z-index: -1;
+    animation: background-pan 30s infinite linear; /* Slow panning animation */
+}
+
+/* Background Pan Animation */
+@keyframes background-pan {
+    0% {
+        background-position: center top;
+    }
+    50% {
+        background-position: center center;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+/* Content Styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85); /* More transparent background for readability */
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+section {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85); /* More transparent */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Card Styles */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.category-card {
+    flex: 1 1 200px;
+    max-width: 200px;
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category-card a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.category-card a:hover {
+    color: #0056b3;
+}
+
+/* Button Style for Future Use */
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}

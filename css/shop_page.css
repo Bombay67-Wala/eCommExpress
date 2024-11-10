@@ -1,0 +1,306 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-image: url('assests/images/n_blue.png');
+    color: #af2e2e;
+    padding: 10px;
+    text-align: center;
+}
+nav {
+    position: absolute; /* Position the nav outside the normal document flow */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    padding: 10px; 
+    margin-left: 20px;    
+}
+nav a{
+    text-decoration: none;
+    color: rgb(29, 21, 138); /* White text color */
+    font-size: 18px; /* Adjust font size */
+    font-weight: bold;
+    margin-left: 20px;
+    background-origin: padding-box;
+}
+nav a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+main {
+    padding: 30px 10%;
+    background-color: #fff;
+}
+
+h2.shop-heading {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+/* Product Filters Section */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.filters select, .filters input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.filters input[type="range"] {
+    width: 300px;
+}
+
+.filters label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    grid-template-rows: auto;
+}
+
+.product-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: 200px;
+}
+
+.product-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+.product-item h3 {
+    font-size: 1.8em;
+    margin: 15px 0;
+    color: #333;
+}
+
+.product-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+.product-item span {
+    font-size: 1.4em;
+    color: #f8c200;
+    font-weight: bold;
+}
+
+.product-item .cta-buttons {
+    margin-top: 15px;
+}
+
+.product-item .cta-buttons a {
+    background-color: #f8c200;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.product-item .cta-buttons a:hover {
+    background-color: #e0b100;
+}
+
+/* Pagination / Load More Button */
+.pagination {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pagination a {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #f8c200;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a:hover {
+    background-color: #e0b100;
+}
+
+.pagination .active {
+    background-color: #e0b100;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filters select,
+    .filters input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .pagination a {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+/* General button styling */
+.product-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover effect */
+.product-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Focused and active states */
+.product-button:focus, .product-button:active {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Disabled state */
+.product-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+.add-to-cart, .buy-now ,.view-details{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover, .buy-now:hover ,.view-details:hover{
+    background-color: #45a049;
+} 
+
+    /* Center the cart container */
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    /* Center the cart items and make them wrap if too wide */
+    #cart-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px; /* space between items */
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    /* Style individual cart items */
+    .cart-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 10px 0;
+        width: 300px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+    }
+
+    /* Adjust image size */
+    .cart-item img {
+        margin-bottom: 10px;
+    }
+
+    /* Button styling */
+    .remove-from-cart {
+        background-color: #ff4d4d;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .remove-from-cart:hover {
+        background-color: #e60000;
+    }
+    
+    .button-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    /* Proceed to Buy button styling */
+    #proceed-to-buy {
+        margin-top: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        align-content: center;
+    }
+
+    #proceed-to-buy:hover {
+        background-color: #45a049;
+    }

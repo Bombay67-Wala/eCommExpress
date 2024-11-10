@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h1, h3 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 10px 0;
+        }
+        .section h3 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .address, .cart, .total {
+            font-size: 0.9em;
+            color: #555;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.1em;
+            text-align: right;
+            padding-top: 10px;
+        }
+        .order-button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1em;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .order-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Order Confirmation</h1>
+
+        <div class="section">
+            <h3>Delivery Address</h3>
+            <div id="addressDetails" class="address">
+                <!-- Address details will be displayed here -->
+            </div>
+            <p style="text-align: right;">
+                <a href="/address.html">Edit Address</a>
+            </p>
+        </div>
+
+        <div class="section">
+            <h3>Order Summary</h3>
+            <ul id="cartList" class="cart"></ul>
+            <div class="total">Total: $<span id="totalPrice">0</span></div>
+        </div>
+
+        <button id="confirmOrderBtn" class="order-button">Place Order</button>
+    </div>
+
+    <script>
+        // Display saved address
+        function displayAddress() {
+            const addressDetails = JSON.parse(localStorage.getItem('deliveryAddress'));
+            const addressDiv = document.getElementById('addressDetails');
+
+            if (addressDetails) {
+                addressDiv.innerHTML = `
+                    <p><strong>Name:</strong> ${addressDetails.name}</p>
+                    <p><strong>Address:</strong> ${addressDetails.address}</p>
+                    <p><strong>City:</strong> ${addressDetails.city}</p>
+                    <p><strong>ZIP Code:</strong> ${addressDetails.zip}</p>
+                `;
+            } else {
+                addressDiv.innerHTML = '<p>No address saved. <a href="/address.html">Enter address</a>.</p>';
+            }
+        }
+
+        // Display cart items and total price
+        function displayCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartList = document.getElementById('cartList');
+            cartList.innerHTML = '';
+
+            let totalPrice = 0;
+            cart.forEach(item => {
+                const totalItemPrice = item.price * item.quantity;
+                totalPrice += totalItemPrice;
+
+                const li = document.createElement('li');
+                li.innerHTML = `${item.name} - $${item.price} x ${item.quantity} = $${totalItemPrice}`;
+                cartList.appendChild(li);
+            });
+
+            document.getElementById('totalPrice').innerText = totalPrice;
+        }
+
+        // Place order confirmation
+        document.getElementById('confirmOrderBtn').addEventListener('click', function() {
+            alert('Your order has been confirmed!');
+            localStorage.removeItem('cart');
+            localStorage.removeItem('deliveryAddress');
+            window.location.href = 'confirmation.html';
+        });
+
+        // Load cart and address details on page load
+        displayCart();
+        displayAddress();
+    </script>
+
+</body>
+</html>

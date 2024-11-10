@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NestCart - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Applying background image to the whole page */
+        body {
+            background-image: url('assests/images/bg.jpeg'); /* Path to your image */
+            background-size: cover; /* Ensures the image covers the entire viewport */
+            background-position: center center; /* Centers the image */
+            background-attachment: fixed; /* Fixes the background image while scrolling */
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .background-image {
+            position: absolute; /* or relative,         depending on your layout */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Lower z-index so it’s behind the links */
+}
+
+    </style>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Welcome Message Styling */
+        .welcome-message {
+            font-size: 4em;
+            font-weight: bold;
+            color: #FFD700; /* Start with a golden color */
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideIn 3s ease-out, bounceEffect 1s 3s ease-in-out infinite, colorChange 5s linear infinite;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        /* Slide in Effect */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px); /* Start slightly above the screen */
+                opacity: 0;
+            }
+            60% {
+                transform: translateY(10px); /* Come down a bit */
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0); /* Rest in place */
+            }
+        }
+
+        /* Bounce Effect */
+        @keyframes bounceEffect {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            20% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(5px);
+            }
+            80% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Color Change */
+        @keyframes colorChange {
+            0% {
+                color: #efd2ee; /* Gold color */
+            }
+            50% {
+                color: #ff9b89; /* Tomato red */
+            }
+            100% {
+                color: #c4b76f; /* Return to gold */
+            }
+        }
+
+        /* Sparkling Effect - Using Box Shadow */
+        .welcome-message::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2em;
+            opacity: 0;
+            animation: sparkle 2s infinite ease-in-out;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-20px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+        }
+    </style>
+
+    
+</head>
+<body>
+    <!-- Header and Navigation -->
+  
+    <header>
+        <h1 class="welcome-message">Welcome to NestCart</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Electronics Section -->
+                <div class="product-item">
+                    <img src="assests\images\apple.jpg" alt="Apple Smartphone">
+                    <h3>Apple Smartphone</h3>
+                    <p><strong>Price:</strong> $999</p>
+                    <p>Latest model with cutting-edge features and a high-quality camera.</p>
+                    <a href="shop.html#electronics">View More</a>
+                </div>
+                <div class="product-item">
+                    <img src="assests/images/samsung.png" alt="Samsung Tablet">
+                    <h3>Samsung Tablet</h3>
+                    <p><strong>Price:</strong> $599</p>
+                    <p>High-performance tablet for work and entertainment, with a sleek design.</p>
+                    <a href="shop.html#electronics">View More</a>
+                </div>
+
+                <!-- Home Appliances Section -->
+                <div class="product-item">
+                    <img src="assests/images/Dyson Air Purifier.jpg" alt="Dyson Air Purifier">
+                    <h3>Dyson Air Purifier</h3>
+                    <p><strong>Price:</strong> $499</p>
+                    <p>Advanced filtration system that purifies the air and removes allergens.</p>
+                    <a href="shop.html#home-appliances">View More</a>
+                </div>
+                <div class="product-item">
+                    <img src="assests\images\LG Washing Machine.png" alt="LG Washing Machine">
+                    <h3>LG Washing Machine</h3>
+                    <p><strong>Price:</strong> $799</p>
+                    <p>Efficient washing with various modes, energy-saving, and quick cycles.</p>
+                    <a href="shop.html#home-appliances">View More</a>
+                </div>
+
+                <!-- Sports Section -->
+                <div class="product-item">
+                    <img src="https://th.bing.com/th/id/OIP.YguOkIP2xIjpoReX_q0R4gHaHa?rs=1&pid=ImgDetMain" alt="Nike Footwear">
+                    <h3>Nike Footwear</h3>
+                    <p><strong>Price:</strong> $129</p>
+                    <p>Comfortable, high-performance sports shoes for every athlete.</p>
+                    <a href="shop.html#sports">View More</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://th.bing.com/th/id/R.51bad5d84192b22582207e5b5488fae6?rik=627g%2blGRB5H52A&riu=http%3a%2f%2fdemandware.edgesuite.net%2fsits_pod20-adidas%2fdw%2fimage%2fv2%2faaqx_prd%2fon%2fdemandware.static%2f-%2fSites-adidas-products%2fen_US%2fdwe0ce1f24%2fzoom%2fAY8131_21_model.jpg%3fsw%3d2000%26sfrm%3djpg&ehk=2pKNFli9k5W98QGl8IuEs76TELxwYI6ZfRvwV5%2fZd5A%3d&risl=&pid=ImgRaw&r=0"Adidas Hoodie">
+                    <h3>Adidas Hoodie</h3>
+                    <p><strong>Price:</strong> $49</p>
+                    <p>Stylish and comfortable hoodie for everyday wear.</p>
+                    <a href="shop.html#sports">View More</a>
+                </div>
+
+                <!-- Health/Wellness Section -->
+                <div class="product-item">
+                    <img src="assests\images\fitbit.png" alt="Fitbit Tracker">
+                    <h3>Fitbit Tracker</h3>
+                    <p><strong>Price:</strong> $129</p>
+                    <p>Track your steps, heart rate, and calories with the Fitbit tracker.</p>
+                    <a href="shop.html#health-wellness">View More</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://images.philips.com/is/image/philipsconsumer/40c163015ed048aaa014af120116362e?$jpglarge$&wid=960" alt="Philips Airfryer">
+                    <h3>Philips Airfryer</h3>
+                    <p><strong>Price:</strong> $199</p>
+                    <p>Fry, bake, grill, and roast with little to no oil using the Philips Airfryer.</p>
+                    <a href="shop.html#health-wellness">View More</a>
+                </div>
+
+                <!-- Furniture Section -->
+                <div class="product-item">
+                    <img src="https://th.bing.com/th/id/OIP.xC5DEH4jyk11-C3sHPWBewHaHa?rs=1&pid=ImgDetMain" alt="Ikea Chair">
+                    <h3>Ikea Chair</h3>
+                    <p><strong>Price:</strong> $89</p>
+                    <p>Comfortable and stylish chairs for your living room or office.</p>
+                    <a href="shop.html#furniture">View More</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://th.bing.com/th/id/R.575c5cacb297a1742fc6dafaf1ef24fe?rik=IQCumeQe3QHEXA&riu=http%3a%2f%2fhouse-ideas.org%2fwp-content%2fuploads%2f2015%2f11%2fIkea-hemnes-bedroom-furniture-photo-13.jpg&ehk=%2bzWcEy%2bYmiszceVHigLbyEz7qiDZQXCKDsx14m0gOCY%3d&risl=&pid=ImgRaw&r=0" alt="Ikea Bed">
+                    <h3>Ikea Bed</h3>
+                    <p><strong>Price:</strong> $349</p>
+                    <p>Sleep in comfort with the minimalist Ikea bed frame.</p>
+                    <a href="shop.html#furniture">View More</a>
+                </div>
+
+                <!-- Books Section -->
+                <div class="product-item">
+                    <img src="https://th.bing.com/th/id/OIP.duiXWrWMr7UlEAkEaqFR0wHaKq?rs=1&pid=ImgDetMain" alt="Paper Chase Books">
+                    <h3>Paper Chase Books</h3>
+                    <p><strong>Price:</strong> Varies</p>
+                    <p>Unique and creative stationery products including books, posters, and business cards.</p>
+                    <a href="shop.html#books">View More</a>
+                </div>
+                <div class="product-item">
+                    <img src="https://i.pinimg.com/originals/e9/5b/6a/e95b6a00b0adda864693efcb038589f9.jpg" alt="Barnes & Noble Ebooks">
+                    <h3>Barnes & Noble Ebooks</h3>
+                    <p><strong>Price:</strong> Varies</p>
+                    <p>Explore a wide selection of ebooks from various genres.</p>
+                    <a href="shop.html#books">View More</a>
+                </div>
+
+                <!-- Groceries Section -->
+                <div class="product-item">
+                    <img src="https://cdn.abcotvs.com/dip/images/1370583_060316-wls-walmart-img.jpg" alt="Walmart Groceries">
+                    <h3>Walmart Groceries</h3>
+                    <p><strong>Price:</strong> Varies</p>
+                    <p>Fresh produce, pantry items, and organic options for all your grocery needs.</p>
+                    <a href="shop.html#groceries">View More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NestCart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

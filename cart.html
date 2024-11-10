@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="css/shop_page.css">
+</head>
+<body>
+    <header>
+        <h1>Your Cart</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart">
+            <h2>Your Cart Items</h2>
+            <div id="cart-items"></div>
+            <div class="button-container"><button id="proceed-to-buy" onclick="proceedToCheckout()">Proceed to Buy</button></div>
+        </section>
+    </main>
+
+    <script>
+        const cartItemsDiv = document.getElementById('cart-items');
+        const cart = JSON.parse(localStorage.getItem('cart'));
+    
+        if (cart.length > 0) {
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}" style="width: 200px; height: 200px;">
+                    <h3>${item.name}</h3>
+                    <p><strong>Price:</strong> ${item.price}</p>
+                    <button class="remove-from-cart">Remove</button>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+        } else {
+            cartItemsDiv.innerHTML = '<p>Your cart is empty!</p>';
+        }
+    
+        document.querySelectorAll('.remove-from-cart').forEach((button, index) => {
+            button.addEventListener('click', function() {
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                window.location.reload();
+            });
+        });
+    
+        // Proceed to Checkout Function
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            // Redirect to checkout page or show a confirmation message
+            window.location.href = 'checkout.html'; // Replace with your actual checkout page
+        }
+    </script>
+    
+    <script src="cart.js"></script>
+</body>
+</html>

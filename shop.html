@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NestCart - Products and Services</title>
+    <link rel="stylesheet" href="css/shop_page.css">
+    
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <h1>Welcome to NestCart</h1>
+        <nav>
+            <a href="index.html">Home </a>
+            <a href="cart.html">Cart </a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="faq.html">FAQ</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <!-- Main Content -->
+<main>
+    <!-- Electronics Section -->
+    <section class="product-category">
+        <h2>Electronics</h2>
+        <div class="product-grid">
+            <!-- Apple Smartphone -->
+            <div class="product-item" data-product-id="1">
+                <img src="assests/images/apple.jpg" alt="Apple Smartphone">
+                <h3>Apple Smartphone</h3>
+                <p><strong>Brand:</strong> Apple</p>
+                <p><strong>Category:</strong> Smartphone</p>
+                <p class="price"><strong>Price:</strong> $999</p>
+                <p>Latest model with cutting-edge features, great performance, and high-quality camera.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+                <button class="view-details">View Details</button>
+            </div>
+            
+            <!-- Apple Smartwatch -->
+           
+            <div class="product-grid">
+                <!-- Apple Smartwatch -->
+                <div class="product-item" data-product-id="2">
+                    <img src="https://th.bing.com/th/id/OIP.BsF3T3B_HC3J5R_lZm1NJAHaHa?rs=1&pid=ImgDetMain" alt="Apple Smartwatch">
+                    <h3>Apple Smartwatch</h3>
+                    <p><strong>Brand:</strong> Apple</p>
+                    <p><strong>Category:</strong> Smartwatch</p>
+                    <p class="price"><strong>Price:</strong> $399</p>
+                    <p>Stay connected and monitor your health with the latest Apple Smartwatch.</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                    <button class="view-details" onclick="window.location.href='applew'">View Details</button>
+                </div>
+            </div>
+            
+
+            <!-- Samsung Tablet -->
+            <div class="product-item" data-product-id="3">
+                <img src="assests/images/samsung.png" alt="Samsung Tablet">
+                <h3>Samsung Tablet</h3>
+                <p><strong>Brand:</strong> Samsung</p>
+                <p><strong>Category:</strong> Tablet</p>
+                <p class="price"><strong>Price:</strong> $599</p>
+                <p>High-performance tablet for work and entertainment, with a sleek design.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+                <button class="view-details" onclick="window.location.href='products/samsung.html'">View Details</button>
+            </div>
+
+            <!-- Sony Gaming Console -->
+            <div class="product-item" data-product-id="4">
+                <img src="https://th.bing.com/th/id/OIP.FiEbKbhxHwYsm8spntrwiwHaHa?rs=1&pid=ImgDetMain" alt="Sony Gaming Console">
+                <h3>Sony Gaming Console</h3>
+                <p><strong>Brand:</strong> Sony</p>
+                <p><strong>Category:</strong> Gaming Console</p>
+                <p class="price"><strong>Price:</strong> $499</p>
+                <p>Immersive gaming experience with Sony’s latest gaming console.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Appliances Section -->
+    <section class="product-category">
+        <h2>Home Appliances</h2>
+        <div class="product-grid">
+            <!-- Dyson Air Purifier -->
+            <div class="product-item" data-product-id="5">
+                <img src="assests/images/Dyson Air Purifier.jpg" alt="Dyson Air Purifier">
+                <h3>Dyson Air Purifier</h3>
+                <p><strong>Brand:</strong> Dyson</p>
+                <p><strong>Category:</strong> Air Purifier</p>
+                <p class="price"><strong>Price:</strong> $499</p>
+                <p>Advanced filtration system that purifies the air and removes allergens.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+
+            <!-- LG Washing Machine -->
+            <div class="product-item" data-product-id="6">
+                <img src="assests/images/LG Washing Machine.png" alt="LG Washing Machine">
+                <h3>LG Washing Machine</h3>
+                <p><strong>Brand:</strong> LG</p>
+                <p><strong>Category:</strong> Washing Machine</p>
+                <p class="price"><strong>Price:</strong> $799</p>
+                <p>Efficient washing with various modes, energy-saving, and quick cycles.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+
+            <!-- Whirlpool Microwave -->
+            <div class="product-item" data-product-id="7">
+                <img src="https://th.bing.com/th/id/OIP.OvuHfVwaIbtQ-Dkyx_MJMwHaFj?rs=1&pid=ImgDetMain" alt="Whirlpool Microwave">
+                <h3>Whirlpool Microwave</h3>
+                <p><strong>Brand:</strong> Whirlpool</p>
+                <p><strong>Category:</strong> Microwave</p>
+                <p class="price"><strong>Price:</strong> $299</p>
+                <p>Compact microwave with advanced features and quick cooking capabilities.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section class="product-category">
+        <h2>Sports</h2>
+        <div class="product-grid">
+            <!-- Nike Footwear -->
+            <div class="product-item" data-product-id="8">
+                <img src="https://th.bing.com/th/id/OIP.YguOkIP2xIjpoReX_q0R4gHaHa?rs=1&pid=ImgDetMain" alt="Nike Footwear">
+                <h3>Nike Footwear</h3>
+                <p><strong>Brand:</strong> Nike</p>
+                <p><strong>Category:</strong> Footwear</p>
+                <p class="price"><strong>Price:</strong> $129</p>
+                <p>Comfortable, high-performance sports shoes for every athlete.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+
+            <!-- Adidas Hoodie -->
+            <div class="product-item" data-product-id="9">
+                <img src="https://th.bing.com/th/id/R.51bad5d84192b22582207e5b5488fae6?rik=627g%2blGRB5H52A&riu=http%3a%2f%2fdemandware.edgesuite.net%2fsits_pod20-adidas%2fdw%2fimage%2fv2%2faaqx_prd%2fon%2fdemandware.static%2f-%2fSites-adidas-products%2fen_US%2fdwe0ce1f24%2fzoom%2fAY8131_21_model.jpg%3fsw%3d2000%26sfrm%3djpg&ehk=2pKNFli9k5W98QGl8IuEs76TELxwYI6ZfRvwV5%2fZd5A%3d&risl=&pid=ImgRaw&r=0" alt="Adidas Hoodie">
+                <h3>Adidas Hoodie</h3>
+                <p><strong>Brand:</strong> Adidas</p>
+                <p><strong>Category:</strong> Hoodie</p>
+                <p class="price"><strong>Price:</strong> $49</p>
+                <p>Stylish and comfortable hoodie for everyday wear.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+
+            <!-- Decathlon Sports Equipment -->
+            <div class="product-item" data-product-id="10">
+                <img src="https://sportsmatik.com/uploads/sports-corner/equipment-bn.jpg" alt="Decathlon Sports Equipment">
+                <h3>Decathlon Sports Equipment</h3>
+                <p><strong>Brand:</strong> Decathlon</p>
+                <p><strong>Category:</strong> Sports Equipment</p>
+                <p class="price"><strong>Price:</strong> Varies</p>
+                <p>Wide range of high-quality sports equipment for every sport.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Health/Wellness Section -->
+    <section class="product-category">
+        <h2>Health/Wellness</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="assests\images\fitbit.png" alt="Fitbit Tracker">
+                <h3>Fitbit Tracker</h3>
+                <p><strong>Brand:</strong> Fitbit</p>
+                <p><strong>Category:</strong> Tracker</p>
+                <p class="price"><strong>Price:</strong> $129</p>
+                <p>Track your steps, heart rate, and calories with the Fitbit tracker.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.JMNCuW5cShJgq_NkjfB7mgAAAA?rs=1&pid=ImgDetMain" alt="Peloton Indoor Bike">
+                <h3>Peloton Indoor Bike</h3>
+                <p><strong>Brand:</strong> Peloton</p>
+                <p><strong>Category:</strong> Indoor Bike</p>
+                <p class="price"><strong>Price:</strong> $1,895</p>
+                <p>Bring the gym home with Peloton's interactive and immersive indoor bike.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://images.philips.com/is/image/philipsconsumer/86f547c07dc44f98bf18ad7c01013bf5?$jpglarge$&wid=1250" alt="Philips Airfryer">
+                <h3>Philips Airfryer</h3>
+                <p><strong>Brand:</strong> Philips</p>
+                <p><strong>Category:</strong> Airfryer</p>
+                <p class="price"><strong>Price:</strong> $199</p>
+                <p>Fry, bake, grill, and roast with little to no oil using the Philips Airfryer.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-category">
+        <h2>Furniture</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.xC5DEH4jyk11-C3sHPWBewHaHa?rs=1&pid=ImgDetMain" alt="Ikea Chair">
+                <h3>Ikea Chair</h3>
+                <p><strong>Brand:</strong> Ikea</p>
+                <p><strong>Category:</strong> Chair</p>
+                <p class="price"><strong>Price:</strong> $89</p>
+                <p>Comfortable and stylish chairs for your living room or office.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/R.575c5cacb297a1742fc6dafaf1ef24fe?rik=IQCumeQe3QHEXA&riu=http%3a%2f%2fhouse-ideas.org%2fwp-content%2fuploads%2f2015%2f11%2fIkea-hemnes-bedroom-furniture-photo-13.jpg&ehk=%2bzWcEy%2bYmiszceVHigLbyEz7qiDZQXCKDsx14m0gOCY%3d&risl=&pid=ImgRaw&r=0" alt="Ikea Bed">
+                <h3>Ikea Bed</h3>
+                <p><strong>Brand:</strong> Ikea</p>
+                <p><strong>Category:</strong> Bed</p>
+                <p class="price"><strong>Price:</strong> $349</p>
+                <p>Sleep in comfort with the minimalist Ikea bed frame.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-category">
+        <h2>Books</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="https://th.bing.com/th/id/OIP.duiXWrWMr7UlEAkEaqFR0wHaKq?rs=1&pid=ImgDetMain" alt="Paper Chase Books">
+                <h3>Paper Chase Books</h3>
+                <p><strong>Brand:</strong> Paper Chase Press</p>
+                <p><strong>Category:</strong> Posters, Postcards, Hardcover Books, Business Cards</p>
+                <p class="price"><strong>Price:</strong> Varies</p>
+                <p>Unique and creative stationery products including books, posters, and business cards.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+            <div class="product-item">
+                <img src="https://i.pinimg.com/originals/e9/5b/6a/e95b6a00b0adda864693efcb038589f9.jpg" alt="Barnes & Noble Ebooks">
+                <h3>Barnes & Noble Ebooks</h3>
+                <p><strong>Brand:</strong> Barnes & Noble</p>
+                <p><strong>Category:</strong> Ebooks</p>
+                <p class="price"><strong>Price:</strong> Varies</p>
+                <p>Explore a wide selection of ebooks from various genres.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-category">
+        <h2>Groceries</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="https://cdn.abcotvs.com/dip/images/1370583_060316-wls-walmart-img.jpg" alt="Walmart Groceries">
+                <h3>Walmart Groceries</h3>
+                <p><strong>Brand:</strong> Walmart</p>
+                <p><strong>Category:</strong> Groceries, Organic</p>
+                <p class="price"><strong>Price:</strong> Varies</p>
+                <p>Fresh produce, pantry items, and organic options for all your grocery needs.</p>
+                <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+            </div>
+        </div>
+    </section>
+    
+    
+</main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 NestCart. All rights reserved.</p>
+    </footer>
+    <script src="cart.js"></script>
+    
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; }
+        h1 { text-align: center; }
+        .note { background-color: #e7f3fe; color: #31708f; padding: 10px; border: 1px solid #bce8f1; border-radius: 5px; margin-bottom: 20px; }
+        label { font-weight: bold; display: block; margin-top: 15px; }
+        input[type="text"], input[type="number"], input[type="month"] {
+            width: 100%; padding: 8px; margin-top: 5px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px;
+        }
+        .payment-methods { margin-top: 20px; }
+        .method-btn { padding: 10px 20px; margin: 10px; cursor: pointer; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px; }
+        .method-btn:hover { background-color: #45a049; }
+        .button-container { text-align: center; margin-top: 20px; }
+        .button { padding: 10px 20px; color: #fff; background-color: #4CAF50; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .button:hover { background-color: #45a049; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Payment</h1>
+
+        <div class="note">
+            <p><strong>Note:</strong> Please select your preferred payment method below. Your information is securely processed, and we ensure a safe transaction experience.</p>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="payment-methods">
+            <button class="method-btn" id="creditCardBtn">Credit Card</button>
+            <button class="method-btn" id="paypalBtn">PayPal</button>
+            <button class="method-btn" id="googlePayBtn">Google Pay</button>
+        </div>
+
+        <!-- Confirm Payment Button -->
+        <div class="button-container">
+            <button type="button" id="confirmPaymentBtn" class="button">Proceed to Pay</button>
+        </div>
+
+        <!-- Button to visit address page -->
+        <div class="button-container">
+            <button class="button" id="goToAddressPageBtn">Visit Address Page</button>
+        </div>
+    </div>
+
+    <script>
+        // Handle payment method selection and order confirmation
+        document.getElementById('creditCardBtn').addEventListener('click', function() {
+            // Redirect to the credit card payment page
+            window.location.href = 'creditCardPayment.html';  // Replace with actual credit card payment page URL
+        });
+
+        document.getElementById('paypalBtn').addEventListener('click', function() {
+            // Redirect to the PayPal payment page
+            window.location.href = 'paypalPayment.html';  // Replace with actual PayPal payment page URL
+        });
+
+        document.getElementById('googlePayBtn').addEventListener('click', function() {
+            // Redirect to the Google Pay payment page
+            window.location.href = 'googlePayPayment.html';  // Replace with actual Google Pay payment page URL
+        });
+
+        // Handle Visit Address Page Button
+        document.getElementById('goToAddressPageBtn').addEventListener('click', function() {
+            // Redirect to the address page directly
+            window.location.href = 'address.html';  // Replace with your actual address page URL
+        });
+
+        // Optionally handle Proceed to Pay button if you want a fallback flow
+        document.getElementById('confirmPaymentBtn').addEventListener('click', function() {
+            alert('Please select a payment method before proceeding.');
+        });
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Delivery Address</title>
+    <link rel="stylesheet" href="css/checkout.css">
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        
+        header, main {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        .address-section h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-top: 10px;
+        }
+        
+        input, textarea {
+            padding: 8px;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #218838;
+        }
+        
+        #message {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Details , Our Responsibilities....</h1>
+        <p><strong>Note:</strong> Please enter your full address, including street, city, state, and postal code. Make sure to double-check your details to avoid any delays in delivery. <br> <br> We aim to ensure timely and accurate delivery of your order!</p>
+    </header>
+
+    <main>
+        <section class="address-section">
+            <h2>Delivery Address</h2>
+            <form id="address-form">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" required>
+
+                <label for="address">Address:</label>
+                <textarea id="address" required></textarea>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" required>
+
+                <label for="postalCode">Postal Code:</label>
+                <input type="text" id="postalCode" required>
+
+                <label for="state">State:</label>
+                <input type="text" id="state" required>
+
+                <label for="country">Country:</label>
+                <input type="text" id="country" required>
+
+                <label>
+                    <input type="checkbox" id="saveAddress">
+                    Save this address for future purchases
+                </label>
+
+                <button type="button" onclick="validateAndSubmit()">Proceed to Payment</button>
+            </form>
+            <p id="message"></p>
+        </section>
+    </main>
+</body>
+<script>
+    // Check if a saved address exists in localStorage and load it
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedAddress = JSON.parse(localStorage.getItem('savedAddress'));
+        if (savedAddress) {
+            document.getElementById('fullName').value = savedAddress.fullName;
+            document.getElementById('address').value = savedAddress.address;
+            document.getElementById('city').value = savedAddress.city;
+            document.getElementById('postalCode').value = savedAddress.postalCode;
+            document.getElementById('state').value = savedAddress.state;
+            document.getElementById('country').value = savedAddress.country;
+            document.getElementById('saveAddress').checked = true;
+        }
+    });
+    
+    // Validate address fields
+    function validateAndSubmit() {
+    const fullName = document.getElementById('fullName').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const postalCode = document.getElementById('postalCode').value.trim();
+    const state = document.getElementById('state').value.trim();
+    const country = document.getElementById('country').value.trim();
+    const message = document.getElementById('message');
+
+    if (!fullName || !address || !city || !postalCode || !state || !country) {
+        message.textContent = "Please fill out all required fields.";
+        return;
+    }
+
+    if (!/^\d{5,6}$/.test(postalCode)) {
+        message.textContent = "Please enter a valid postal code.";
+        return;
+    }
+
+    // Address validation (Example serviceable area check)
+    if (country.toLowerCase() !== 'india') {
+        message.textContent = "Sorry, we only deliver within India.";
+        return;
+    }
+
+    message.textContent = ""; // Clear any previous messages
+
+    const orderAddress = { fullName, address, city, postalCode, state, country };
+
+    // Save the address if the checkbox is checked
+    if (document.getElementById('saveAddress').checked) {
+        localStorage.setItem('savedAddress', JSON.stringify(orderAddress));
+    } else {
+        localStorage.removeItem('savedAddress');
+    }
+
+    // Redirect to confirmation page or proceed with order placement
+    alert("Order placed successfully!");
+    window.location.href = "confirmation.html"; // Redirect to a confirmation page
+}
+    
+</script>
+</html>
